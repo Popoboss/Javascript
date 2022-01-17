@@ -3,6 +3,6 @@ let pokemonList = [
 
   {myName: 'Machop', height: 0.8, type: 'fighting' },
 
-  {myName: 'Growlithe', height: 0.7, type: 'fire' }
+  {myName: 'Growlithe', height: 0.7, type: 'fire' },
 
 ];
