@@ -1,29 +1,42 @@
+let pokemonRepository = (function() {
 let pokemonList = [
-{
-  name: 'Vulpix',
-  height: 0.3,
-  type: 'fire'
-},
-{
-  name: 'Machop',
-  height: 2,
-  type: 'fighting'
-},
-{
-  name: 'Growlithe',
-  height: 0.6,
-  type: 'fire'}
+
+{ name: 'Vulpix', height: 0.3, type: 'fire' },
+{ name: 'Machop', height: 2, type: 'fire' },
+{ name: 'Growlithe', height: 0.6, type: 'fire' },
 ];
 
-
-for (let i=0; i < pokemonList.length; i++){
-  if(pokemonList[i].height > 1)
-// Adding the comment "Wow, that is a big pokemon!!" to pokemon that are taller than 2m
-  {
-    document.write(pokemonList[i].name +" (Height : " + pokemonList[i].height + ")" + "- Wow this is a big pokemon!!!<br>")
+return {
+  add:function(pokemon) {
+    pokemonList.push(pokemon);
+  },
+  getAll: function() {
+    return pokemonList;
   }
-// Everything else would just show name of Pokemon and height.
-  else {
-  document.write(pokemonList[i].name + " (Height : " + pokemonList[i].height + ")<br>")
-}
-}
+};
+
+})();
+
+console.log(pokemonRepository.getAll());
+pokemonRepository.add({ name: 'Mew'});
+console.log(pokemonRepository.getAll());
+
+(pokemonRepository.getAll()).forEach (function(pokemon) {
+  if (pokemon.height > 0.7) {
+    document.write(
+      pokemon.name +
+        ' (height: ' +
+        pokemon.height +
+        'm) -- ' +
+        'Wow, that\'s big!' +
+        '<br /><br />'
+    );
+  } else
+    document.write(
+      pokemon.name +
+        ' (height: ' +
+        pokemon.height +
+        'm)' +
+        '<br /><br />'
+    );
+});
