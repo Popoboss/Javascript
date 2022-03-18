@@ -20,8 +20,14 @@ let pokemonRepository = (function () {
   function getAll() {
     return repository;
   }
+
   function showDetails(pokemon){
-    console.log(pokemon)
+    console.log(pokemon.name)
+  }
+  function addListener (button, pokemon) {
+    button.addEventListener ("click", function () {
+      showDetails(pokemon)
+    })
   }
   function addListItem(pokemon){
     let pokemonItem = document.querySelector(".pokemon-list");
@@ -31,15 +37,16 @@ let pokemonRepository = (function () {
     button.classList.add("button-class");
     listpokemon.appendChild(button);
     pokemonItem.appendChild(listpokemon);
+    addListener(button,pokemon);
 
-  };
+  }
   return {
     add: add,
     getAll: getAll,
     addListItem: addListItem,
     showDetails: showDetails
 
-  };
+  }
 })();
 
 pokemonRepository.add({ name: "Mew", height: 1.4, types: ["psychic"] });
