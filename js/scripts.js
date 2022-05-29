@@ -144,7 +144,6 @@ const pokemonRepository = (function () {
         imageElementFront.attr("src", pokemon.imageUrlFront);
         let imageElementBack = $('<img class=\'pokemon-modal-image\'>');
         imageElementBack.attr("src", pokemon.imageUrlBack);
-        let typeTextElement = $("<p>" + "Types: " + "</p>");
         let typeElement = document.createElement('p');
         pokemon.types.forEach((type, index) => {
             if (index === pokemon.types.length - 1) {
