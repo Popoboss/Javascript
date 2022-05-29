@@ -68,6 +68,7 @@ const pokemonRepository = (function () {
                 let pokemon = {
                     name: item.name,
                     detailsUrl: item.url
+
                 }
                 add(pokemon);
             })
@@ -160,7 +161,6 @@ const pokemonRepository = (function () {
         modalBody.append(imageElementBack);
         modalBody.append(pokemonHeight);
         modalBody.append(pokemonWeight);
-        modalBody.append(typeTextElement);
     }
 
     return {
